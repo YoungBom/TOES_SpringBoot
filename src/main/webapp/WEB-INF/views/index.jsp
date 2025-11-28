@@ -1,50 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>   
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="/WEB-INF/views/include/head_css.jsp" %>
+<c:import url="/WEB-INF/views/template/head.jsp"></c:import>
 </head>
 <body id="page-top">
 	<div id="wrapper">
-		<c:import url="/WEB-INF/views/include/sidebar.jsp"></c:import>
+		<!-- side bar -->
+		<c:import url="/WEB-INF/views/template/sidebar.jsp"></c:import>
+		<!-- side bar -->
 		
-		<!-- Start  -->
-		<div id="content-wrapper" class="d-flex flex-column">
-			<div id="content">
-				<c:import url="/WEB-INF/views/include/topbar.jsp"></c:import>
-				<div class="container-fluid">
-					<!-- page contents 내용 -->
-					<h1>Index </h1>
-					<h3>
-						<spring:message code="welcome.message2" text="hi"></spring:message>
-					</h3>
- 					<sec:authorize access="isAuthenticated()">
-						<h3>Add GitHub ${vo.sns}</h3>
-						<h3><sec:authentication property="name" /></h3>
-
-						<h3>
-							<sec:authentication property="principal" var="vo"/>
-							${vo.username}, ${vo.email}
-							<spring:message code="user.info" arguments="${vo.username};${vo.email}" argumentSeparator=";" />
-						</h3>
-
-					</sec:authorize>
-					
-				</div>
-			</div>
-			<!--  End Content  -->
-			<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
-		</div>
-		
-		
-	</div>
-	<c:import url="/WEB-INF/views/include/tail.jsp"></c:import>
+		<!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+       			
+       			<!-- topbar -->
+       			<c:import url="/WEB-INF/views/template/topbar.jsp"></c:import>
+            	<!-- topbar -->
+            	
+            	<!-- Begin Page Content -->
+                <div class="container-fluid">
+                	<!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Index</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+                    
+                    <!-- Content Row -->
+                    <div class="row">
+                    
+                    <!-- 생성한 contents 작성 -->
+                    
+                    </div>
+                
+                </div>
+                <!-- /.container-fluid -->
+            </div> 
+            <!-- End of Main Content -->
+            
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
 	
+	</div>
+	
+<c:import url="/WEB-INF/views/template/foot.jsp"></c:import>	
 </body>
 </html>
