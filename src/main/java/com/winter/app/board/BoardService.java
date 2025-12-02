@@ -2,22 +2,21 @@ package com.winter.app.board;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
 
 import com.winter.app.util.Pager;
 
-public interface BoardDAO {
-	public Long count(Pager pager)throws Exception;
+public interface BoardService {
+	
 	
 	public List<BoardDTO> list (Pager pager)throws Exception;
 	
 	public BoardDTO detail(BoardDTO boardDTO)throws Exception;
 
-	public int add(BoardDTO boardDTO)throws Exception;
+	public int add(BoardDTO boardDTO, MultipartFile [] attach)throws Exception;
 	
 	public int update(BoardDTO boardDTO)throws Exception;
 	
 	public int delete(BoardDTO boardDTO)throws Exception;
-	
-	public int fileAdd(BoardFileDTO boardFileDTO)throws Exception;
 
 }
