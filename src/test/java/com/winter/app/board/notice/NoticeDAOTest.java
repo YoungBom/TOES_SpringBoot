@@ -17,7 +17,7 @@ class NoticeDAOTest {
 			NoticeDTO noticeDTO = new NoticeDTO();
 			noticeDTO.setBoardTitle("title"+i);
 			noticeDTO.setBoardWriter("writer"+i);
-			noticeDTO.setBoardContets("contents"+i);
+			noticeDTO.setBoardContents("contents"+i);
 			noticeDAO.add(noticeDTO);
 			if(i%10==0) {
 				Thread.sleep(500);
