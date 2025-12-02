@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.winter.app.board.BoardDTO;
 import com.winter.app.board.BoardService;
@@ -61,6 +62,12 @@ public class QnaService implements BoardService {
 		result=qnaDAO.add(qnaDTO);
 		
 		return result;
+	}
+
+	@Override
+	public int add(BoardDTO boardDTO, MultipartFile[] attach) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
