@@ -1,116 +1,143 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<c:import url="/WEB-INF/views/template/head.jsp"></c:import>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
-    
+<title>회원가입</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #f4f6fb;
+        font-family: "Noto Sans KR", sans-serif;
+    }
+
+    .container {
+        width: 400px;
+        margin: 80px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+        font-size: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+
+    .form-group input:focus {
+        border-color: #4a7cff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(74,124,255,0.2);
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #4a7cff;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+        background: #3d6ae8;
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .login-link a {
+        color: #4a7cff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+</style>
 </head>
-<body id="page-top">
-	<div id="wrapper">
-		<!-- side bar -->
-		<c:import url="/WEB-INF/views/template/sidebar.jsp"></c:import>
-		<!-- side bar -->
-		
-		<!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <div id="content">
-       			
-       			<!-- topbar -->
-       			<c:import url="/WEB-INF/views/template/topbar.jsp"></c:import>
-            	<!-- topbar -->
-            	
-            	<!-- Begin Page Content -->
-                <div class="container-fluid">
-                	<!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Form</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-                    
-                    <!-- Content Row -->
-                    <div class="row justify-content-center mt-5">
-                    <div class="col-lg-6 mt-5">
 
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">${category}</h6>
-                                </div>
-                                <div class="card-body">
-                                   <form method="post" enctype="multipart/form-data">
-                                   	  
-									  <div class="form-group">
-									    <label for="writer">Username</label>
-									    <input type="text" class="form-control"  id="username" name="username">
-									  </div>
-									  <div class="form-group">
-									    <label for="password">Password</label>
-									    <input type="password" class="form-control"  id="password" name="password">
-									  </div>									  
-									  <div class="form-group">
-									    <label for="name">Name</label>
-									    <input type="text" class="form-control" name="name" id="name">
-									  </div>
-									  <div class="form-group">
-									    <label for="email">Email</label>
-									    <input type="email" class="form-control" name="email" id="email">
-									  </div>									  
-									  <div class="form-group">
-									    <label for="phone">Phone</label>
-									    <input type="text" class="form-control" name="phone" id="phone">
-									  </div>									  
-									  <div class="form-group">
-									    <label for="birth">Birth</label>
-									    <input type="date" class="form-control" name="birth" id="birth">
-									  </div>									  
-									  <div class="form-group">
-									  	<button type="button" id="fileAdd"  class="form-control btn btn-primary" >File Add</button>
-									  	
-									  </div>
-									  
-									  <div id="files" class="form-group">
-									  
-									  </div>
-									
-									  <button type="submit" class="btn btn-primary">Submit</button>
-									</form>
-                                </div>
-                             </div>
-                             
-                     </div>           
-                                        
-                    </div>
-                
-                </div>
-                <!-- /.container-fluid -->
-            </div> 
-            <!-- End of Main Content -->
-            
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-        </div>
-	
-	</div>
-	
-<c:import url="/WEB-INF/views/template/foot.jsp"></c:import>
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>	
-<script type="text/javascript">
-	$("#contents").summernote()
-</script>
-<script type="text/javascript" src="/js/board/board.js"></script>
+<body>
+    <div class="container">
+        <h2>회원가입</h2>
 
+        <form method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="username">아이디</label>
+                <input type="text" id="username" name="username" required placeholder="아이디를 입력하세요">
+            </div>
+
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required placeholder="비밀번호를 입력하세요">
+            </div>
+
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required placeholder="example@domain.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">전화번호</label>
+                <input type="text" id="phone" name="phone" placeholder="010-0000-0000">
+            </div>
+
+            <div class="form-group">
+                <label for="birth">생년월일</label>
+                <input type="date" id="birth" name="birth">
+            </div>
+			
+			<div class="form-group">
+			    <label for="profile">프로필 사진</label>
+			    <input type="file" id="profile" name="attach" accept="image/*">
+			</div>
+			
+			
+            <button type="submit" class="btn-submit">회원가입</button>
+
+            <div class="login-link">
+                이미 계정이 있나요? <a href="/user/login">로그인</a>
+            </div>
+
+        </form>
+    </div>
 </body>
 </html>

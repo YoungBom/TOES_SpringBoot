@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<c:import url="/WEB-INF/views/template/head.jsp"></c:import>
+  <meta charset="UTF-8">
+  <title>메인 페이지</title>
+<c:import url="/WEB-INF/views/template/head.jsp"/>
 </head>
 <body id="page-top">
+
 	<div id="wrapper">
 		<!-- side bar -->
-		<c:import url="/WEB-INF/views/template/sidebar.jsp"></c:import>
+		<c:import url="/WEB-INF/views/template/sidebar.jsp"/>
 		<!-- side bar -->
 		
 		<!-- Content Wrapper -->
@@ -20,7 +21,7 @@
             <div id="content">
        			
        			<!-- topbar -->
-       			<c:import url="/WEB-INF/views/template/topbar.jsp"></c:import>
+       			<c:import url="/WEB-INF/views/template/topbar.jsp"/>
             	<!-- topbar -->
             	
             	<!-- Begin Page Content -->
@@ -57,7 +58,7 @@
 	
 	</div>
 	
-<c:import url="/WEB-INF/views/template/foot.jsp"></c:import>	
-<script src="/js/index/index.js"></script>
+
+	<c:import url="/WEB-INF/views/template/foot.jsp"/>	
 </body>
 </html>
