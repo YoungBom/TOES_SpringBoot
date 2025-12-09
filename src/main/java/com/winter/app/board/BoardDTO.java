@@ -3,6 +3,8 @@ package com.winter.app.board;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,12 +13,13 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class BoardDTO {
-	private Long boardNum;
+public class BoardDTO extends CommentDTO {
+	
+	@NotBlank(message = "필수입니다")
 	private String boardTitle;
 	private String boardWriter;
-	private String boardContents;
-	private LocalDate boardDate;
+	
+	
 	private Long boardHit;
 	
 	private List<BoardFileDTO> fileDTOs;
