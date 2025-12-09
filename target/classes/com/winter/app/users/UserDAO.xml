@@ -12,25 +12,14 @@
 			INSERT INTO profile (file_name, file_origin, username)
 			(#{fileName}, #{fileOrigin}, #{username})
 		</insert>
-		
-		<insert id="roleAdd" parameterType="UserDTO">
-			INSERT INTO user_role (username, role_num)
-			values (#{username}, 3)
-		</insert>
     	
-    	<select id="detail" resultMap="detailResult" parameterType="UserDTO">
-			SELECT * 
+    	<select id="detail" resultMap="detailResult" parameterType="QnaDTO">
+    		SELECT *
 			FROM users U
 				 LEFT JOIN
-			     profile P
+			     profile PF
 			     USING(username)
-			     LEFT JOIN
-			     user_role UR
-			     USING(username)
-			     LEFT JOIN 
-			     role R
-			     USING(role_num)
-			WHERE username=#{username}
+			WHERE U.username=#{username}
     	</select>
     	
     	<resultMap type="UserDTO" id="detailResult">
@@ -45,28 +34,8 @@
     			<result column="file_name" property="fileName"/>
     			<result column="file_origin" property="fileOrigin"/>
     		</association>
-    		<collection property="roleDTOs" javaType="java.util.List" ofType="RoleDTO">
-    			<id column="role_num" property="roleNum"/>
-    			<result column="role_name" property="roleName"/>
-    		</collection>
     	</resultMap>
 
-		<update id="update" parameterType="UserDTO">
-			UPDATE users
-			<set>
-				name=#{name},
-				<if test="email != null">
-				email=#{email},
-				</if>
-				<if test="phone != null">
-				phone=#{phone},
-				</if>
-				<if test="birth != null">
-				birth=#{birth}
-				</if>			
-			</set>
-			WHERE username=#{username}
-		</update>
     	
 
     
